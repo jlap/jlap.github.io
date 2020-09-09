@@ -1,0 +1,16 @@
+<html>
+<script type="javascript">
+  function checkCookie(){
+    var cookieEnabled = navigator.cookieEnabled;
+    if (!cookieEnabled){ 
+        document.cookie = "testcookie";
+        cookieEnabled = document.cookie.indexOf("testcookie")!=-1;
+    }
+    document.getElementById('salut').innerHTML = cookieEnabled;
+  }
+</script>
+<body onload="checkCookie()">
+  <p id="salut">checking</p>
+</body>
+</html>
+
