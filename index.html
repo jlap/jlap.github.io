@@ -1,14 +1,16 @@
 <html>
-<script type="javascript">
-  function checkCookie(){
-    var cookieEnabled = navigator.cookieEnabled;
-    if (!cookieEnabled){ 
-        document.cookie = "testcookie";
-        cookieEnabled = document.cookie.indexOf("testcookie")!=-1;
+<head>
+  <script type="javascript">
+    function checkCookie(){
+      var cookieEnabled = navigator.cookieEnabled;
+      if (!cookieEnabled){ 
+          document.cookie = "testcookie";
+          cookieEnabled = document.cookie.indexOf("testcookie")!=-1;
+      }
+      document.getElementById('salut').innerHTML = cookieEnabled;
     }
-    document.getElementById('salut').innerHTML = cookieEnabled;
-  }
-</script>
+  </script>
+</head>
 <body onload="checkCookie()">
   <p id="salut">checking</p>
 </body>
