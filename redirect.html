@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <script>
+    var checkCookie = function () {
+      var cookieEnabled = navigator.cookieEnabled;
+      if (!cookieEnabled) {
+        document.cookie = "testcookie";
+        cookieEnabled = document.cookie.indexOf("testcookie") != -1;
+      }
+      document.getElementById('salut').innerHTML = cookieEnabled;
+    }
+
+    window.setTimeout(() => {
+      checkCookie();
+    }, 1000);
+  </script>
+</head>
+
+<body>
+  <p id="salut">checking</p>
+</body>
+
+</html>
+
