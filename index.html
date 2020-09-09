@@ -1,18 +1,25 @@
 <html>
+
 <head>
-  <script type="javascript">
-    function checkCookie(){
+  <script>
+    var checkCookie = function () {
       var cookieEnabled = navigator.cookieEnabled;
-      if (!cookieEnabled){ 
-          document.cookie = "testcookie";
-          cookieEnabled = document.cookie.indexOf("testcookie")!=-1;
+      if (!cookieEnabled) {
+        document.cookie = "testcookie";
+        cookieEnabled = document.cookie.indexOf("testcookie") != -1;
       }
       document.getElementById('salut').innerHTML = cookieEnabled;
     }
+
+    window.setTimeout(() => {
+      checkCookie();
+    }, 1000);
   </script>
 </head>
-<body onload="checkCookie()">
+
+<body>
   <p id="salut">checking</p>
 </body>
+
 </html>
 
